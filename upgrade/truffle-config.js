@@ -1,3 +1,6 @@
+var HDWalletProvider = require("truffle-hdwallet-provider");
+var mnemonic = "enact lobster cry gift shield sing key grief donor jealous apart deputy";
+
 module.exports = {
   // Uncommenting the defaults below 
   // provides for an easier quick-start with Ganache.
@@ -11,6 +14,14 @@ module.exports = {
      port: 7545,
      network_id: "*"
    },
+   rinkeby: {
+       provider: function() { 
+        return new HDWalletProvider(mnemonic, "https://rinkeby.infura.io/v3/f244f4dda6c54d98be228ae531a5b6ae");
+       },
+       network_id: 4,
+       gas: 4500000,
+       gasPrice: 10000000000,
+   }
   //  test: {
   //    host: "127.0.0.1",
   //    port: 7545,
