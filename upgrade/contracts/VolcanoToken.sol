@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract VolcanoToken is ERC721("Volcano", "VCT"), Ownable {
     uint256 tokenID;
-
+    uint256 constant VERSION = 1;
     struct Metadata {
         uint256 tokenID;
         uint256 timestamp;
@@ -21,6 +21,10 @@ contract VolcanoToken is ERC721("Volcano", "VCT"), Ownable {
         _;
     }
 
+    function getVersion() pure external returns (uint256) {
+        return VERSION;
+    }
+    
     function _checkForOwner(uint256 _ID, address _user) internal view {
         address tokenOwner = ERC721.ownerOf(_ID);
         require(_user == tokenOwner, "Caller must be token owner");
