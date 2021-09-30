@@ -4,9 +4,9 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol";
 
-contract VolcanoTokenUpgradable is ERC721Upgradeable, OwnableUpgradeable {
+contract VolcanoTokenUpgradableV2 is ERC721Upgradeable, OwnableUpgradeable {
     uint256 tokenID;
-    uint256 constant VERSION = 1;
+    uint256 constant VERSION = 2;
     struct Metadata {
         uint256 tokenID;
         uint256 timestamp;
